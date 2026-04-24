@@ -74,7 +74,7 @@ Prefer reading `ratelimit-reset` from headers to the naive `2 ** attempt` — it
 
 ## Recommended concurrency
 
-- **semaphore=25** for regular endpoints — proven ~170 wallets/min throughput (copytrade project)
+- **semaphore=25** for regular endpoints — proven ~170 wallets/min throughput in production
 - **semaphore=50** for multi-endpoints (less data per call)
 - **semaphore=5-10** for exports (each is heavier)
 - Drop semaphore if `ratelimit-remaining < 100`
