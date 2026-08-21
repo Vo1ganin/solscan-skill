@@ -1,34 +1,32 @@
-# Installation — solscan-skill
+# Install Solscan Pro
+
+This repository is a generated single-skill distribution of [https://github.com/Vo1ganin/crypto-claude-skills](https://github.com/Vo1ganin/crypto-claude-skills).
 
 ## Claude Code
 
 ```bash
-git clone https://github.com/Vo1ganin/solscan-skill.git
-mkdir -p ~/.claude/skills
-cp -R solscan-skill ~/.claude/skills/solscan
+tmp="$(mktemp -d)"
+git clone --depth 1 https://github.com/Vo1ganin/solscan-skill.git "$tmp/repo"
+rm -rf "$HOME/.claude/skills/solscan"
+mkdir -p "$HOME/.claude/skills"
+cp -R "$tmp/repo" "$HOME/.claude/skills/solscan"
+rm -rf "$HOME/.claude/skills/solscan/.git" "$tmp"
 ```
 
-Restart Claude Code — the skill auto-triggers on relevant prompts.
+Restart Claude Code after installation. Re-running the commands replaces the prior generated copy rather than nesting another directory.
 
-## Codex / Cursor / other AI agents
+## Other agents
 
-This repo follows the [agents.md](https://agents.md) spec. Most agents auto-read `SKILL.md` or `AGENTS.md` on project load. Alternatively, paste `SKILL.md` into your agent's rules / system prompt.
+Use `SKILL.md` as task-scoped instructions only where your agent supports that convention. Agent behavior differs; do not assume automatic discovery without checking that agent's documentation.
 
-## API keys
+## API configuration
+
+Copy `.env.example` to a private environment file outside Git, or export only the variables you need. Never paste credentials into prompts, screenshots, examples, or committed files.
+
+## Update / uninstall
+
+Update by repeating the installation steps. Uninstall with:
 
 ```bash
-cp .env.example .env
-# fill in your keys, then:
-set -a; source .env; set +a
+rm -rf "$HOME/.claude/skills/solscan"
 ```
-
-## Run the Python examples directly
-
-```bash
-pip install aiohttp httpx
-python references/examples/<example>.py --help
-```
-
-## Part of [`crypto-claude-skills`](https://github.com/Vo1ganin/crypto-claude-skills)
-
-This skill is also included in the umbrella [`crypto-claude-skills`](https://github.com/Vo1ganin/crypto-claude-skills) collection alongside `dune-skill`, `solscan-skill`, `nansen-skill`, and `solana-rpc-skill`.

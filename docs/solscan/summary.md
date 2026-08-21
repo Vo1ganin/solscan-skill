@@ -1,6 +1,6 @@
 # Solscan Pro API v2 — Documentation Summary
 
-Собрано 2026-04-23 из официальных доков и собственного опыта работы (copytrade project).
+Собрано 2026-04-23 из официальной документации и эмпирического API-тестирования.
 
 ## Basics
 
@@ -11,7 +11,7 @@
 
 ## Rate limits
 
-**Not explicitly documented officially.** Empirical values from production (copytrade project):
+**Not explicitly documented officially.** Empirical values from bounded API testing:
 - **~950 req/min** — safe baseline
 - **~3000 req/min** — burst, may hit 429
 
@@ -169,7 +169,7 @@ Useful fields from `transaction/detail`:
 
 ## MCP vs direct API
 
-MCP server at `/Users/ilya/.claude/mcp-servers/solscan/index.js` (stdio, local Node).
+MCP server at `/path/to/solscan-mcp/index.js` (stdio, local Node).
 - Good for interactive single queries
 - **For batch work (100+ wallets), use direct HTTP with async aiohttp + semaphore**
 - MCP serializes requests — loses parallelism benefit

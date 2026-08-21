@@ -1,0 +1,10 @@
+{
+  "collection_version": "0.2.0",
+  "generated": true,
+  "mirror_repository": "https://github.com/Vo1ganin/solscan-skill",
+  "schema_version": 1,
+  "skill_id": "solscan",
+  "source_commit": "c2174f116d6baa0970d41a8983198b02169aabc2",
+  "source_path": "skills/solscan",
+  "source_repository": "https://github.com/Vo1ganin/crypto-claude-skills"
+}

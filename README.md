@@ -1,4 +1,14 @@
-# Solscan Pro Skill
+# Solscan Pro — AI-agent skill
+
+> **Generated distribution mirror.** The canonical source, issues, and releases live in [https://github.com/Vo1ganin/crypto-claude-skills](https://github.com/Vo1ganin/crypto-claude-skills). Do not hand-edit generated files in this repository.
+
+AI-agent skill and Python examples for batched Solscan Pro v2 analytics with credit controls.
+
+- Canonical skill: [https://github.com/Vo1ganin/crypto-claude-skills/tree/main/skills/solscan](https://github.com/Vo1ganin/crypto-claude-skills/tree/main/skills/solscan)
+- Collection: [https://github.com/Vo1ganin/crypto-claude-skills](https://github.com/Vo1ganin/crypto-claude-skills)
+- Provenance: [`.source.json`](.source.json)
+
+## Skill documentation
 
 Solana wallet / token / NFT / transaction analytics via [Solscan Pro API v2](https://pro-api.solscan.io) for Claude Code.
 
